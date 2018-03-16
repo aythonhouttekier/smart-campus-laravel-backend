@@ -20,6 +20,11 @@ class MeasurementsController extends Controller
 
     public function store(Request $request)
     {
-        return measurements::create($request->all());
+        if ($request->has(['value', 'sensor_id'])) {
+            return measurements::create($request->all());
+        } else {
+            echo "Wrong format to store";
+        }
+        
     }
 }

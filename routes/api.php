@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('measurements', 'MeasurementsController@index');
 Route::get('measurements/{id}', 'MeasurementsController@show');
 Route::post('measurements', 'MeasurementsController@store');
+
+Route::post('listener', 'TTNDataController@store');
