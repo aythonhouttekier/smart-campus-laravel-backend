@@ -16,8 +16,9 @@ Routes:
 
 the format for postings should look like this:
 
-'''json
+```json
 {
 	"classroom": "theClassroomYouWantToAdd"
 }
-'''
+Â```
+Â´
