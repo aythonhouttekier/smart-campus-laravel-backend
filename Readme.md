@@ -20,5 +20,4 @@ the format for postings should look like this:
 {
 	"classroom": "theClassroomYouWantToAdd"
 }
-Â```
-Â´
+```
