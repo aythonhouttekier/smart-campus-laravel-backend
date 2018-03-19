@@ -27,4 +27,12 @@ Route::get('locations', 'LocationsController@index');
 Route::get('locations/{id}', 'LocationsController@show');
 Route::post('locations', 'LocationsController@store');
 
+Route::get('devices', 'DevicesController@index');
+Route::get('devices/{id}', 'DevicesController@show');
+Route::post('devices', 'DevicesController@store');
+
+Route::get('sensors', 'SensorsController@index');
+Route::get('sensors/{id}', 'SensorsController@show');
+Route::post('sensors', 'SensorsController@store');
+
 Route::post('listener', 'TTNDataController@store');
