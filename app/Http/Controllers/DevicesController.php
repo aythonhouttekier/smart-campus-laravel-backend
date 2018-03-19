@@ -19,7 +19,8 @@ class DevicesController extends Controller
     public function store(Request $request)
     {
         if ($request->has(['device_name'])) {
-            return devices::create($request->all());
+            $data = ['device_name' => $request->input('device_name'), 'location_id' => 1];
+            return devices::create($data);
         } else {
             echo "Wrong format to store";
         }
