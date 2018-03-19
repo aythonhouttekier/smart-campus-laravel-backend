@@ -20,10 +20,12 @@ class DevicesController extends Controller
     public function store(Request $request)
     {
         if ($request->has(['device_name'])) {
-            $measurement = new measurements;
+            $devices = new devices;
 
-             $measurement->device_name         = $request->input('device_name');
-              $measurement->location_id        = 1;
+             $devices->device_name         = $request->input('device_name');
+              $devices->location_id        = 1;
+
+              $devices->save();
 
 
             //$data = ['device_name' => $request->input('device_name'), 'location_id' => 1];
