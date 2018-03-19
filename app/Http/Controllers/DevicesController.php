@@ -20,8 +20,14 @@ class DevicesController extends Controller
     public function store(Request $request)
     {
         if ($request->has(['device_name'])) {
-            $data = ['device_name' => $request->input('device_name'), 'location_id' => 1];
-            return devices::create($data);
+            $measurement = new measurements;
+
+             $measurement->device_name         = $request->input('device_name');
+              $measurement->location_id        = 1;
+
+
+            //$data = ['device_name' => $request->input('device_name'), 'location_id' => 1];
+            //return devices::create($data);
         } else {
             echo "Wrong format to store";
         }
