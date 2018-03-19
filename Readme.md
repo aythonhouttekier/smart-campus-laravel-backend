@@ -1,12 +1,30 @@
 The database settings are optimized for heroku, please contact me if you want to use another database.
 
-The app can be found on:
+##App link:
 
 **https://projectwerk2.herokuapp.com**
 
-Locations api is working:
+###API Routes:
 
-Routes:
+####Listener:
+
+**api/listener** (POST REQUEST to post multiple measurements)
+
+the format should look like this:
+
+```json
+{
+	"temperature": double,
+	"humidity": double,
+	"movement": double
+}
+```
+
+to check if the measurements are added you can check:
+
+**api/measurements** (GET REQUEST)
+
+#### Locations:
 
 **api/locations/{id}**
 
