@@ -20,9 +20,19 @@ class SensorsController extends Controller
     public function store(Request $request)
     {
         if ($request->has(['sensor_name', 'measurement_unit'])) {
-            $data = ['sensor_name' => $request->input('sensor_name'),
-             'measurement_unit' => $request->input('measurement_unit'),'device_id' => 1];
-            return devices::create($data);
+
+            $sensor = new sensors;
+
+            $sensor->sensor_name         = $request->input('sensor_name');
+            $sensor->measurement_unit         = $request->input('measurement_unit');
+            $sensor->device_id        = 1;
+
+            $sensor->save();
+
+
+            //$data = ['sensor_name' => $request->input('sensor_name'),
+             //'measurement_unit' => $request->input('measurement_unit'),'device_id' => 1];
+            //return devices::create($data);
         } else {
             echo "Wrong format to store";
         }
