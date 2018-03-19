@@ -32,17 +32,17 @@ class TTNDataController extends Controller
       $measurement = new measurements;
 
        $measurement->value         = $request->input('temperature');
-       $measurement->sensor_id        = 1;
+       $measurement->sensor_id        = 2;
 
        $measurement1 = new measurements;
 
        $measurement1->value         = $request->input('humidity');
-       $measurement1->sensor_id        = 1;
+       $measurement1->sensor_id        = 2;
 
        $measurement2 = new measurements;
 
        $measurement2->value         = $request->input('movement');
-       $measurement2->sensor_id        = 1;
+       $measurement2->sensor_id        = 2;
 
        $measurement->save();
        $measurement1->save();
