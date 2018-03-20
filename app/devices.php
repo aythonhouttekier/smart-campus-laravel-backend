@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class devices extends Model
 {
+    // dev-eui 16char string example: 00E4F052209EE8A5
     protected $fillable = array('device_name');
     
     public function sensors() {
