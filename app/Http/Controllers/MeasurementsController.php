@@ -8,6 +8,7 @@ use App\measurements;
 
 class MeasurementsController extends Controller
 {
+    //this is for graphql
     public function index()
     {
         return measurements::all();
