@@ -1,5 +1,6 @@
 # Smart Campus Laravel Backend
 In this project i'm working with laravel 5.6
+
 Specs and guides can be found on following link:
 https://laravel.com/docs/5.6
 
@@ -21,7 +22,7 @@ TODO
 
 ### Listener:
 
-**api/listener** (POST REQUEST to post multiple measurements)
+* **api/listener** (POST REQUEST to post multiple measurements)
 
 the format should look like this:
 
@@ -39,11 +40,9 @@ to check if the measurements are added you can check:
 
 ### Locations:
 
-**api/locations/{id}**
-
-**api/locations** (GET REQUEST returns all locations)
-
-**api/locations** (POST REQUEST posts a new locations)
+* **/api/locations/{id}**
+* **/api/locations** (GET REQUEST returns all locations)
+* **/api/locations** (POST REQUEST posts a new locations)
 
 the format for postings should look like this:
 
