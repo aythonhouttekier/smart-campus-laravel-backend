@@ -53,7 +53,7 @@ return [
             'strict' => false,
             'engine' => null,
         ],
-
+        postgres://:6af6cb814d5b02f63f50300286349a6266f61b2a971c5e37d3f608942c0c77e4@:5432/
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
