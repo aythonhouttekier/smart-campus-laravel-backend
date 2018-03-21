@@ -1,6 +1,9 @@
 # Smart Campus Laravel Backend
 
-The database settings are optimized for heroku, please contact me if you want to use another database.
+### Installing laravel from scratch
+If you want to install laravel from scratch follow the readme of this repository:
+**https://github.com/Trapn/laravelframeworktesting** (there is a little tutorial for laravel blade templating and presetting react)
+
 
 ## App link:
 
