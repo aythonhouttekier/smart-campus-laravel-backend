@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class sensors extends Model
 {
-    protected $fillable = array('sensor_name', 'measurement_unit');
+    protected $fillable = array('name', 'measurement_unit', 'device_id');
     
     public function measurements() {
         return $this->hasMany('measurements');
