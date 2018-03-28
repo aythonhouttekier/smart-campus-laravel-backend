@@ -26,13 +26,10 @@ class DevicesController extends Controller
               $devices->location_id        = 1;
 
               $devices->save();
-
-
             //$data = ['device_name' => $request->input('device_name'), 'location_id' => 1];
             //return devices::create($data);
         } else {
             echo "Wrong format to store";
-        }
-        
+        }    
     }
 }
