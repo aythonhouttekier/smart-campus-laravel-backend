@@ -25,7 +25,7 @@ class SensorsController extends Controller
 
             $sensor->sensor_name         = $request->input('sensor_name');
             $sensor->measurement_unit         = $request->input('measurement_unit');
-            $sensor->device_id        = 3;
+            $sensor->device_id        = 1;
 
             $sensor->save();
 
