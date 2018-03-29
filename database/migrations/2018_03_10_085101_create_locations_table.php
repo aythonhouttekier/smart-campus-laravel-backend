@@ -18,8 +18,7 @@ class CreateLocationsTable extends Migration
             $table->string('name', 45);
             $table->string('roomnumber', 16);
             $table->string('description', 100);
-
-            
+      
             $table->timestamps();
         });
     }
