@@ -63,4 +63,4 @@ the format for postings should look like this:
 ## Database
 
 ### Database UML
-![Alt Text](/images/database_uml.PNG)
+![Alt Text](/images/database_uml.png)
