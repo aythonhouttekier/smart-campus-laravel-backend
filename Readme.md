@@ -11,13 +11,13 @@ If you want to install laravel from scratch follow the readme of this repository
 ## Using Eloquent ORM
 If you want to use mySQL create a database called: `smartcampus`
 
-Run this command in powershell to create the database tables:
+Run this command in powershell to create the database tables:  
 ```php artisan migrate```
 
 ## Using Database: Seeding
-To "seed" (or fill) the database with dummy info:
+To "seed" (or fill) the database with dummy info:  
 ```php artisan db:seed```
-ONLY if you did something wrong with adding info to the database run this before seeding:
+ONLY if you did something wrong with adding info to the database run this before seeding:  
 ```php artisan migrate:fresh``` (this will delete all tables and make them again)
 
 ## App link:
@@ -39,7 +39,8 @@ There's a dummy device in the database with dev-eui `00E4F052209EE8A5` the json 
     "temperature": 5,
     "humidity": 20,
     "movement": 8
-}```
+}
+```
 
 to check if the measurements are added you can check:
 
