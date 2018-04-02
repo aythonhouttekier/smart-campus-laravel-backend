@@ -60,3 +60,7 @@ the format for postings should look like this:
 	"classroom": "theClassroomYouWantToAdd"
 }
 ```
+## Database
+
+### Database UML
+![Alt Text](\images\database_uml.png)
