@@ -17,6 +17,7 @@ Run this command in powershell to create the database tables:
 ## Using Database: Seeding
 To "seed" (or fill) the database with dummy info:      
 ```php artisan db:seed```  
+  
 ONLY if you did something wrong with adding info to the database run this before seeding:      
 ```php artisan migrate:fresh``` (this will delete all tables and make them again)
 
