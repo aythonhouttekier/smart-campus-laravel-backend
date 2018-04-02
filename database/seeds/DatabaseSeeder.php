@@ -26,13 +26,11 @@ class DatabaseSeeder extends Seeder
 class SmartCampusDummySeeder extends Seeder {
 
     public function run() {
-
-        DB::table('locations')->delete();
-        DB::table('devices')->delete();
-        DB::table('sensors')->delete();
         DB::table('measurements')->delete();
-
-
+        DB::table('sensors')->delete();
+        DB::table('devices')->delete();
+        DB::table('locations')->delete();
+        
         $roomEmbedded = locations::create(array(
             'name'         => 'Embedded systems',
             'roomnumber'   => '2.65',
@@ -52,6 +50,24 @@ class SmartCampusDummySeeder extends Seeder {
         $dummySensor = sensors::create(array(
             'name'             => 'Dummy_sensor',
             'measurement_unit' => 'Dummy_unit',
+            'device_id' => $device->id
+        ));
+
+        $dummySensor = sensors::create(array(
+            'name'             => 'temperature',
+            'measurement_unit' => 'Celcius',
+            'device_id' => $device->id
+        ));
+
+        $dummySensor = sensors::create(array(
+            'name'             => 'humidity',
+            'measurement_unit' => '%',
+            'device_id' => $device->id
+        ));
+
+        $dummySensor = sensors::create(array(
+            'name'             => 'movement',
+            'measurement_unit' => '%',
             'device_id' => $device->id
         ));
 
