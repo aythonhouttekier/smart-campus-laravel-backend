@@ -63,4 +63,4 @@ the format for postings should look like this:
 ## Database
 
 ### Database UML
-![Alt Text](https://github.com/Projectwerk2-2018/smart-campus-laravel-backend/tree/master/images/database_uml.png)
+![Alt Text](https://github.com/Projectwerk2-2018/smart-campus-laravel-backend/tree/master/images/database_uml.PNG)
