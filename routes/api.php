@@ -20,30 +20,30 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'UserController@login');
 
-Route::post('register', 'UserController@register');
+//Route::post('register', 'UserController@register');
 
 
 Route::group(['middleware' => 'auth:api'], function(){
 
     Route::get('details', 'UserController@details');
-    Route::get('locations', 'LocationsController@index');
+
+    Route::post('measurements', 'MeasurementsController@store');
+    Route::post('locations', 'LocationsController@store');
+    Route::post('sensors', 'SensorsController@store');
+    Route::post('devices', 'DevicesController@store');
 
 });
 
 Route::get('measurements', 'MeasurementsController@index');
 Route::get('measurements/{id}', 'MeasurementsController@show');
-Route::post('measurements', 'MeasurementsController@store');
 
 Route::get('locations', 'LocationsController@index');
 Route::get('locations/{id}', 'LocationsController@show');
-Route::post('locations', 'LocationsController@store');
 
 Route::get('devices', 'DevicesController@index');
 Route::get('devices/{id}', 'DevicesController@show');
-Route::post('devices', 'DevicesController@store');
 
 Route::get('sensors', 'SensorsController@index');
 Route::get('sensors/{id}', 'SensorsController@show');
-Route::post('sensors', 'SensorsController@store');
 
 Route::post('listener', 'TTNDataController@store');
