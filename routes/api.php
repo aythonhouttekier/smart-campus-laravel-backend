@@ -20,18 +20,15 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'UserController@login');
 
-//Route::post('register', 'UserController@register');
-
+Route::post('register', 'UserController@register');
 
 Route::group(['middleware' => 'auth:api'], function(){
 
     Route::get('details', 'UserController@details');
-
     Route::post('measurements', 'MeasurementsController@store');
     Route::post('locations', 'LocationsController@store');
     Route::post('sensors', 'SensorsController@store');
     Route::post('devices', 'DevicesController@store');
-
 });
 
 Route::get('measurements', 'MeasurementsController@index');
