@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'UserController@login');
 
+Route::get('index', 'UserController@index');
 Route::post('register', 'UserController@register');
 Route::get('details', 'UserController@details');
 
