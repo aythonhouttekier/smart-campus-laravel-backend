@@ -44,8 +44,8 @@ class UserController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);            
         }
         $input = $request->all();
-        var_dump(5);
         $input['password'] = bcrypt($input['password']);
+        var_dump($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
         $success['name'] =  $user->name;
