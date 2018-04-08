@@ -57,6 +57,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function index()
+    {
+        return User::all();
+    }
+
+
     public function details()
     {
         $user = Auth::user();
