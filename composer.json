@@ -40,9 +40,7 @@
         }
     },
     "scripts": {
-        "compile": [
-            "chmod -R 777 storage/"
-          ],
+
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
@@ -52,7 +50,12 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
-        ]
+        ],
+        "compile": [
+            "@php artisan passport:install",
+            "@php artisan passport:keys",
+            "@chmod -R 777 storage/"
+          ]
     },
     "config": {
         "preferred-install": "dist",
