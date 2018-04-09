@@ -34,6 +34,16 @@ return [
             'driver' => 'stack',
             'channels' => ['single'],
         ],
+        'single' => [
+            'driver' => 'errorlog',
+            'level' => 'debug',
+        ],
+
+/*     'channels' => [
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['single'],
+        ], */
 
         'single' => [
             'driver' => 'single',
