@@ -95,21 +95,23 @@ the format for postings should look like this:
 }
 ```
 ## Register and login
-This is an example to register or login with a user to access the :closed_lock_with_key: API's
+This is an example to register or login with a user to access the :closed_lock_with_key: API's. In this example i'm using POSTMAN you can download it here:  
+https://www.getpostman.com/
 ### Register 
+To register you can simply add some Params to you're request:
 * **/api/register** 
 ![Alt Text](/images/register.PNG)
 ### Register 
+After registering you can get the token by logging in:
 * **/api/login** 
-After registering you can get the token by logging in
 ![Alt Text](/images/login.PNG)
 ### Accessing the :closed_lock_with_key: API's
-When done the previous steps you have to add some things to youre request
-1. Set authentication type to "Bearer Token" and fill in you're recived token
+When done the previous steps you have to add some things to you're request
+#### 1. Set authentication type to "Bearer Token" and fill in you're recived token
 ![Alt Text](/images/addtokentorequest.PNG)
-2. Add these two values to the header:
+#### 2. Add these two values to the header:
 ![Alt Text](/images/addheaders.PNG)
-3. Normally you should be able now to access following API's with a POST request:
+#### 3. Normally you should be able now to access following API's with a POST request:
 * **/api/locations**  :unlock:
 * **/api/devices**  :unlock:
 * **/api/sensors**  :unlock:
