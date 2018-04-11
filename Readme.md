@@ -27,6 +27,8 @@ ONLY if you did something wrong with adding info to the database run this before
 
 ## API Routes:
 
+If the api is indicated with a  :closed_lock_with_key: you need an account to use the api
+
 ### Listener:
 
 * **/api/listener** (POST REQUEST to post multiple measurements)
@@ -50,16 +52,72 @@ to check if the measurements are added you can check:
 ### Locations:
 
 * **/api/locations/{id}**
-* **/api/locations** (GET REQUEST returns all locations)
-* **/api/locations** (POST REQUEST posts a new locations)
+* **/api/locations** (GET REQUEST returns all locations)  
+* **/api/locations**  :closed_lock_with_key: (POST REQUEST posts a new locations) 
 
 the format for postings should look like this:
 
 ```json
 {
-	"classroom": "theClassroomYouWantToAdd"
+    "name": "theNameOffTheClassroom",
+    "roomnumber": "theNumberOfftheClassroom(the datatype is a string)",
+    "description": "theDescriptionOffTheClassroom"
 }
 ```
+### Devices:
+
+* **/api/devices/{id}**
+* **/api/devices** (GET REQUEST returns all devices)  
+* **/api/devices**  :closed_lock_with_key: (POST REQUEST posts a new devices) 
+
+the format for postings should look like this:
+
+```json
+{
+    "name": "theNameOffTheDevice",
+    "dev-eui": "theDev-euiOffTheDevice",
+    "location_id": "PKoffTheLocationWhereTheDeviceIsLocated"
+}
+```
+### Sensors:
+
+* **/api/sensors/{id}**
+* **/api/sensors** (GET REQUEST returns all sensors)  
+* **/api/sensors** :closed_lock_with_key: (POST REQUEST posts a new sensors) 
+
+the format for postings should look like this:
+
+```json
+{
+    "name": "theNameOffThesensor",
+    "measurement_unit": "theUnitTheSensorIsMeasuring",
+    "device_id": "PKoffTheDeviceWhereTheSensorIsInstalled"
+}
+```
+## Register and login
+This is an example to register or login with a user to access the :closed_lock_with_key: API's
+### Register 
+* **/api/register** 
+![Alt Text](/images/register.PNG)
+### Register 
+* **/api/login** 
+After registering you can get the token by logging in
+![Alt Text](/images/login.PNG)
+### Accessing the :closed_lock_with_key: API's
+When done the previous steps you have to add some things to youre request
+1. Set authentication type to "Bearer Token" and fill in you're recived token
+![Alt Text](/images/addtokentorequest.PNG)
+2. Add these two values to the header:
+![Alt Text](/images/addheaders.PNG)
+3. Normally you should be able now to access following API's with a POST request:
+* **/api/locations**  :unlock:
+* **/api/devices**  :unlock:
+* **/api/sensors**  :unlock:
+* **/api/measurements**  :unlock:  
+Make sure the Foreign key(if adding devices, sensors, measurements) of the other table exists.  
+You should get something like this when sending the post request:
+![Alt Text](/images/postlocation.PNG)
+
 ## Database
 
 ### Database UML
