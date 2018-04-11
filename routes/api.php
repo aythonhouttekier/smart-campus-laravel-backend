@@ -17,32 +17,30 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-
-Route::post('login', 'UserController@login');
-
+//TODO
 Route::get('index', 'UserController@index');
 Route::post('register', 'UserController@register');
-Route::get('details', 'UserController@details');
 
+//Login for posting
+Route::post('login', 'UserController@login');
 Route::group(['middleware' => 'auth:api'], function(){
-
     Route::get('details', 'UserController@details');
     Route::post('measurements', 'MeasurementsController@store');
     Route::post('locations', 'LocationsController@store');
     Route::post('sensors', 'SensorsController@store');
     Route::post('devices', 'DevicesController@store');
 });
-
+//Public measurments routes
 Route::get('measurements', 'MeasurementsController@index');
 Route::get('measurements/{id}', 'MeasurementsController@show');
-
+//Public locations routes
 Route::get('locations', 'LocationsController@index');
 Route::get('locations/{id}', 'LocationsController@show');
-
+//Public devices routes
 Route::get('devices', 'DevicesController@index');
 Route::get('devices/{id}', 'DevicesController@show');
-
+//Public sensors routes
 Route::get('sensors', 'SensorsController@index');
 Route::get('sensors/{id}', 'SensorsController@show');
-
+//Routes for the TTN listener
 Route::post('listener', 'TTNDataController@store');
