@@ -24,12 +24,12 @@ If you want to use mySQL create a database called: `smartcampus`
 
 Run this command in powershell to create the database tables:    
 ```php artisan migrate```
-The output should look like this:
+The output should look like this:  
 ![Alt Text](/images/migrations.PNG)
 ## Using Database: Seeding
 To "seed" (or fill) the database with dummy info:      
 ```php artisan db:seed```  
-The output should look like this:
+The output should look like this:  
 ![Alt Text](/images/seeds.PNG)
 ONLY if you did something wrong with adding info to the database run this before seeding:      
 ```php artisan migrate:fresh``` (this will delete all tables and make them again)
@@ -107,10 +107,12 @@ the format for postings should look like this:
     "device_id": "PKoffTheDeviceWhereTheSensorIsInstalled"
 }
 ```
-## Register and login
+# Register and login
 ### JSON Web Tokens (JWT)
-JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.
+JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.  
+
 ![Alt Text](/images/authSchema.png)
+## Example
 This is an example to register or login with a user to access the :closed_lock_with_key: API's. In this example i'm using POSTMAN you can download it here:  
 https://www.getpostman.com/
 ### Register 
