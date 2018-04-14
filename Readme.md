@@ -4,6 +4,17 @@ In this project i'm working with laravel 5.6
 Specs and guides can be found on following link:    
 https://laravel.com/docs/5.6
 
+#### Server Requirements
+
+* PHP >= 7.1.3
+* OpenSSL PHP Extension
+* PDO PHP Extension
+* Mbstring PHP Extension
+* Tokenizer PHP Extension
+* XML PHP Extension
+* Ctype PHP Extension
+* JSON PHP Extension
+
 ### Installing laravel from scratch
 If you want to install laravel from scratch follow the readme of this repository:    
 **https://github.com/Trapn/laravelframeworktesting** (there is a little tutorial for laravel blade templating and presetting react)
@@ -13,11 +24,13 @@ If you want to use mySQL create a database called: `smartcampus`
 
 Run this command in powershell to create the database tables:    
 ```php artisan migrate```
-
+The output should look like this:
+![Alt Text](/images/migrations.PNG)
 ## Using Database: Seeding
 To "seed" (or fill) the database with dummy info:      
 ```php artisan db:seed```  
-  
+The output should look like this:
+![Alt Text](/images/seeds.PNG)
 ONLY if you did something wrong with adding info to the database run this before seeding:      
 ```php artisan migrate:fresh``` (this will delete all tables and make them again)
 
@@ -27,7 +40,7 @@ ONLY if you did something wrong with adding info to the database run this before
 
 ## API Routes:
 
-If the api is indicated with a  :closed_lock_with_key: you need an account to use the api
+If the api is indicated with a  :closed_lock_with_key: you need an account to use the api (see register and login down below how to acces thes api routes)
 
 ### Listener:
 
@@ -95,6 +108,9 @@ the format for postings should look like this:
 }
 ```
 ## Register and login
+### JSON Web Tokens (JWT)
+JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.
+![Alt Text](/images/authSchema.png)
 This is an example to register or login with a user to access the :closed_lock_with_key: API's. In this example i'm using POSTMAN you can download it here:  
 https://www.getpostman.com/
 ### Register 
@@ -124,3 +140,10 @@ You should get something like this when sending the post request:
 
 ### Database UML
 ![Alt Text](/images/database_uml.PNG)
+
+## Heroku
+
+#### Running commands on heroku
+You can run all artisan commands on heroku:
+```heroku run php /app/artisan migrate```  
+
