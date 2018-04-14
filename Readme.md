@@ -19,14 +19,14 @@ https://laravel.com/docs/5.6
 If you want to install laravel from scratch follow the readme of this repository:    
 **https://github.com/Trapn/laravelframeworktesting** (there is a little tutorial for laravel blade templating and presetting react)
 
-## Using Eloquent ORM
+# Using Eloquent ORM
 If you want to use mySQL create a database called: `smartcampus`
 
 Run this command in powershell to create the database tables:    
 ```php artisan migrate```
 The output should look like this:  
 ![Alt Text](/images/migrations.PNG)
-## Using Database: Seeding
+# Using Database: Seeding
 To "seed" (or fill) the database with dummy info:      
 ```php artisan db:seed```  
 The output should look like this:  
@@ -34,9 +34,14 @@ The output should look like this:
 ONLY if you did something wrong with adding info to the database run this before seeding:      
 ```php artisan migrate:fresh``` (this will delete all tables and make them again)
 
-## App link:
+# App link:
 
-**https://projectwerk2.herokuapp.com**
+**https://projectwerk2.herokuapp.com/**  
+  
+If you run this local you can start the server by:
+```php artisan serve``` 
+The app can be found on:
+```http://localhost:8000/``` 
 
 ## API Routes:
 
