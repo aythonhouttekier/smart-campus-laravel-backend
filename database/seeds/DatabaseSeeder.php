@@ -78,6 +78,28 @@ class SmartCampusDummySeeder extends Seeder {
             'sensor_id' => $dummySensor->id
         ));
 
+        measurements::create(array(
+            'value' => 21,
+            'sensor_id' => $dummySensor->id
+        ));
+
+        measurements::create(array(
+            'value' => 22,
+            'sensor_id' => $dummySensor->id
+        ));
+        measurements::create(array(
+            'value' => 23,
+            'sensor_id' => $dummySensor->id
+        ));
+        measurements::create(array(
+            'value' => 24,
+            'sensor_id' => $dummySensor->id
+        ));
+        measurements::create(array(
+            'value' => 25,
+            'sensor_id' => $dummySensor->id
+        ));
+
         $this->command->info('Added one value');
     }
 
