@@ -31,9 +31,9 @@ Route::post('login', 'UserController@login');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('details', 'UserController@details');
     Route::post('measurements', 'MeasurementsController@store');
-    Route::post('locations', 'LocationsController@store');
-    Route::post('sensors', 'SensorsController@store');
-    Route::post('devices', 'DevicesController@store');
+    //Route::post('locations', 'LocationsController@store');
+    //Route::post('sensors', 'SensorsController@store');
+    //Route::post('devices', 'DevicesController@store');
 });
 //Public measurments routes
 Route::get('measurements', 'MeasurementsController@index');
