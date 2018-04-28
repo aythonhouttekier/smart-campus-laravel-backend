@@ -56,7 +56,7 @@ the format should look like this:
 There's a dummy device in the database with dev-eui `00E4F052209EE8A5` the json should look like this:  
 ```json
 {
-    "dev-eui": "00E4F052209EE8A5",
+    "dev_eui": "00E4F052209EE8A5",
     "temperature": 5,
     "humidity": 20,
     "movement": 8
