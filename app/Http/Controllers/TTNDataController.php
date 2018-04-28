@@ -13,8 +13,8 @@ class TTNDataController extends Controller
   public function store(Request $request)
   {
   $sensor_types = ['temperature', 'humidity', 'movement'];
-  $dev_eui = $request->input('dev-eui');
-  $device = devices::where('dev-eui', $dev_eui)->firstOrFail(); // try catch(ModelNotFoundException)   
+  $dev_eui = $request->input('dev_eui');
+  $device = devices::where('dev_eui', $dev_eui)->firstOrFail(); // try catch(ModelNotFoundException)   
      
     foreach($sensor_types as $sensor_type){
       $value = $request->input($sensor_type);
