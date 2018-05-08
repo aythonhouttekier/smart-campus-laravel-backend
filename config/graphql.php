@@ -1,5 +1,9 @@
 <?php
 
+use app\graphQL\Query\UserQuery;
+use app\graphQL\Type\UserType;
+use app\graphQL\Mutation\CreateUserMutation;
+use app\graphQL\Mutation\UpdateUserMutation;
 
 return [
 
@@ -124,10 +128,12 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-
+                'users' => app\GraphQL\Query\UserQuery::class
+                
             ],
             'mutation' => [
-
+                'createUser' => app\GraphQL\CreateUserMutation::class,
+                'updateUser' => app\GraphQL\UpdateUserMutation::class,
             ]
         ]
     ],
@@ -181,7 +187,7 @@ return [
      * ]
      */
     'types' => [
-
+            'users' => app\GraphQL\Type\UserType::class
     ],
 
     /*
