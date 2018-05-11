@@ -10,11 +10,11 @@ class devices extends Model
     protected $fillable = array('name', 'dev-eui', 'location_id');
     
     public function sensors() {
-        return $this->hasMany('sensors');
+        return $this->hasMany(sensors::class);
     }
 
     public function locations() {
-        return $this->hasOne('locations');
+        return $this->hasOne(locations::class,'location_id');
     }
     
 }

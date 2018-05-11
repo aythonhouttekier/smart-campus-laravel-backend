@@ -6,7 +6,7 @@ use Folklore\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
-use app\User;
+use App\User;
 
 
 class CreateUserMutation extends Mutation
@@ -25,7 +25,9 @@ class CreateUserMutation extends Mutation
     public function args()
     {
         return [
-            'name' => [
+            'id' => [
+                'type' => Type::nonNull(Type::int())
+            ], 'name' => [
                 'type' => Type::nonNull(Type::string())
             ],
             'email' => [

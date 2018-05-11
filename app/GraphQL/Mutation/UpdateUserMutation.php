@@ -6,17 +6,18 @@ use Folklore\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
+use App\User;
 
 class UpdateUserMutation extends Mutation
 {
     protected $attributes = [
-        'name' => 'UpdateUser',
+        'name' => 'updateUser',
         'description' => 'A mutation'
     ];
 
     public function type()
     {
-        return GraphQL::type('updateusers');
+        return GraphQL::type('updateUser');
     }
 
     public function args()
@@ -29,6 +30,12 @@ class UpdateUserMutation extends Mutation
             'name' => [
                 'name' => 'name',
                 'type' => Type::nonNull(Type::string())
+            ],
+            'email' => [
+                'type' => Type::varchar(191)
+            ],
+            'password' => [
+                'type' => Type::varchar(191)
             ]
         ];
     }

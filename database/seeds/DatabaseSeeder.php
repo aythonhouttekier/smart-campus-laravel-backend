@@ -5,6 +5,7 @@ use App\locations;
 use App\devices;
 use App\sensors;
 use App\measurements;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -72,6 +73,23 @@ class SmartCampusDummySeeder extends Seeder {
         ));
 
         $this->command->info('Dummy sensor created, you can add dummy measurments with the api');
+
+
+
+        User::create(array(
+            'id' => 1,
+            'name' => "Fernanda Costermans",
+            'email' => "fern.cos@telenet.be",
+            'password' => "jdfksjf",
+            'remember_token' => "tokenkjdfj",
+            'created_at' => "1990-01-01 00:00:01",
+            'updated_at' => "1991-01-01 07:00:01"
+        ));
+
+
+
+
+
 
         measurements::create(array(
             'value' => 20,
