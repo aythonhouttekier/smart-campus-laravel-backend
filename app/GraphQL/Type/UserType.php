@@ -20,17 +20,11 @@ class UserType extends BaseType
                 'type' => Type::nonNull(Type::int())
             ],
             'name' => [
-                'type' => Type::nonNull(Type::varchar(191))
+                'type' => Type::nonNull(Type::string())
 
             ],
-            //'remember_token' => [
-            //   'type' => Type::varchar(100)
-            //],
-            'created_at' => [
-                'type' => Type::timestamp()
-            ],
-            'updated_at' => [
-                'type' => Type::timestamp()
+            'email' => [
+                'type' => Type::string()
             ],
 
         ];

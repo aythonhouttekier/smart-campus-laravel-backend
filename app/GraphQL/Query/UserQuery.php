@@ -18,7 +18,7 @@ class UserQuery extends Query
 
     public function type()
     {
-        return GraphQL::type('UserType');
+        return GraphQL::type('userquery');
         //return Type::listOf(Type::string());
     }
 
@@ -26,13 +26,24 @@ class UserQuery extends Query
     {
         return [
             'id' => [
+                'name' => 'id',
                 'type' => Type::nonNull(Type::int())
+            ],
+            'email' => [
+                'name' => 'email',
+                'type' => Type::string()
             ]
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
-        if(isset($args['id'])) return user::find($args['id']); else return [];
+        if(isset($args['id'])) {
+            return user::find($args['id']);
+        }
+
+        if(isset($args['email'])) {
+            return user::find($args['email']);
+        }
     }
 }

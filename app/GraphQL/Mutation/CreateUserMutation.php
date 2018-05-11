@@ -26,7 +26,7 @@ class CreateUserMutation extends Mutation
     {
         return [
             'name' => [
-                'type' => Type::nonNull(Type::varchar(191))
+                'type' => Type::nonNull(Type::string())
             ],
             'email' => [
                 'type' => Type::nonNull(Type::varchar(191)),
@@ -34,7 +34,7 @@ class CreateUserMutation extends Mutation
             ],
             'password' => [
                 'type' => Type::nonNull(Type::varchar(191)),
-                'rules' => ['min:4']
+              //'rules' => ['min:4']
             ],
         ];
     }
