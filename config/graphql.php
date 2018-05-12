@@ -49,20 +49,26 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'usersQuery' => App\GraphQL\Query\UserQuery::class,
-                'devicesQuery' => App\GraphQL\Query\DevicesQuery::class,
+                'UsersQuery' => App\GraphQL\Query\UserQuery::class,
+                'DevicesQuery' => App\GraphQL\Query\DevicesQuery::class,
+                'LocationsQuery' => App\GraphQL\Query\LocationsQuery::class,
+                'MeasurementsQuery' => App\GraphQL\Query\MeasurementsQuery::class,
+                'SensorQuery' => App\GraphQL\Query\SensorQuery::class,
             ],
             'mutation' => [
-                'createUser' => App\GraphQL\Mutation\CreateUserMutation::class,
-                'updateUser' => App\GraphQL\Mutation\UpdateUserMutation::class,
+                'CreateUserMutation' => App\GraphQL\Mutation\CreateUserMutation::class,
+                'UpdateUserMutation' => App\GraphQL\Mutation\UpdateUserMutation::class,
                 'createDevice' => App\GraphQL\Mutation\CreateDevicesMutation::class, 
             ]
             ]
         ],
         
     'types' => [
-        'usersType' => app\GraphQL\Type\UserType::class,
-        'devicesType' => App\GraphQL\Type\DevicesType::class
+        'UsersType' => app\GraphQL\Type\UserType::class,
+        'DevicesType' => App\GraphQL\Type\DevicesType::class,
+        'LocationsType' => App\GraphQL\Type\LocationsType::class,
+        'MeasurementsType' => App\GraphQL\Type\MeasurementsType::class,
+        'SensorType' => App\GraphQL\Type\SensorType::class
     ],
        
 

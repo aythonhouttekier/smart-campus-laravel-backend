@@ -11,8 +11,8 @@ use App\User;
 class UpdateUserMutation extends Mutation
 {
     protected $attributes = [
-        'name' => 'updateUser',
-        'description' => 'A mutation'
+        'name' => 'UpdateUserMutation',
+        'description' => 'update the user'
     ];
 
     public function type()

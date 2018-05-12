@@ -11,13 +11,13 @@ use App\devices;
 class DevicesQuery extends Query
 {
     protected $attributes = [
-        'name' => 'devicesQuery',
+        'name' => 'DevicesQuery',
         'description' => 'A query for devices'
     ];
 
     public function type()
     {
-        return GraphQL::type('DevicesType');
+        return GraphQL::type('devices');
     }
 
     public function args()
@@ -36,13 +36,9 @@ class DevicesQuery extends Query
                 'type' => Type::nonNull(Type::varchar(16)),
                 'description' => 'The dev-uit code'
             ],
-            /* 'created_at' => [
-                'type' => Type::timestamp(),
-                'description' => 'created at',
-            ],
-            'updated_at' => [
-                'type' => Type::timestamp(),
-                'description' => 'updated at'
+            /* 'location_id' => [
+                'type' => Type::nonNull(Type::int()),
+                'description' => 'location_id',
             ], */
             'sensors' => [
                 'type' => Type::listof(GraphQL::type('sensors')),
@@ -69,7 +65,9 @@ class DevicesQuery extends Query
         else if(isset($args['dev-eui'])) {
             return devices::find($args['dev-eui']);
         } 
-
+        /* else if(isset($args['location_id'])) {
+            return devices::find($args['location_id']);
+        } */ 
         else if(isset($args['sensors'])) {
             return devices::find($args['sensors']);
         } 
@@ -77,10 +75,7 @@ class DevicesQuery extends Query
         else if(isset($args['locations'])) {
             return devices::find($args['locations']);
         } 
-      //  else if(isset($args['password'])) {
-      //      return user::find($args['password']);
-      //  } 
-              
+
         else { 
             return devices::all();
         }

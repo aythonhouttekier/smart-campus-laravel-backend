@@ -11,8 +11,8 @@ class DevicesType extends BaseType
 {
 
     protected $attributes = [
-        'name' => 'devicesType',
-        'description' => 'A type',
+        'name' => 'DevicesType',
+        'description' => 'A type of device',
         'model' => devices::class
     ];
 
@@ -32,10 +32,10 @@ class DevicesType extends BaseType
                 'type' => Type::nonNull(Type::varchar(16)),
                 'description' => 'The dev-uit code'
             ],
-         //   'location_id' => [
-         //       'type' => Type::nonNull(Type::int()),
-         //       'description' => 'The location id'
-         //   ],
+            /* 'location_id' => [
+                'type' => Type::nonNull(Type::int()),
+                'description' => 'The location id'
+            ], */
             'created_at' => [
                 'type' => Type::timestamp(),
                 'description' => 'created at',

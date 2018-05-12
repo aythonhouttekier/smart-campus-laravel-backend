@@ -18,7 +18,7 @@ class CreateUserMutation extends Mutation
 
     public function type()
     {
-        return GraphQL::type('UserType');
+        return GraphQL::type('User');
         //return Type::listOf(Type::string());
     }
 

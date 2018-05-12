@@ -36,6 +36,10 @@ class CreateDevicesMutation extends Mutation
                 'type' => Type::nonNull(Type::varchar(16)),
                 'description' => 'The dev-uit code'
             ],
+            'location_id' => [
+                'type' => Type::nonNull(Type::int()),
+                'description' => 'location_id',
+            ],
             /* 'created_at' => [
                 'type' => Type::timestamp(),
                 'description' => 'created at',
