@@ -1,11 +1,19 @@
 <?php
 
 use App\GraphQL\Query\UserQuery;
+use App\GraphQL\Query\DevicesQuery;
+use App\GraphQL\Query\LocationsQuery;
+use App\GraphQL\Query\MeasurementsQuery;
+use App\GraphQL\Query\SensorQuery;
+
 use App\GraphQL\Type\UserType;
+use App\GraphQL\Type\DevicesType;
+use App\GraphQL\Type\LocationsType;
+use App\GraphQL\Type\MeasurementsType;
+use App\GraphQL\Type\SensorsType;
+
 use App\GraphQL\Mutation\CreateUserMutation;
 use App\GraphQL\Mutation\UpdateUserMutation;
-use App\GraphQL\Query\DevicesQuery;
-use App\GraphQL\Type\DevicesType;
 use App\GraphQL\Mutation\CreateDevicesMutation;
 
 return [
