@@ -55,18 +55,18 @@ class MeasurementsQuery extends Query
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
         if(isset($args['id'])) {
-            return devices::find($args['id']);
+            return measurements::find($args['id']);
         }
 
         else if(isset($args['value'])) {
-            return devices::find($args['value']);
+            return measurements::find($args['value']);
         } 
         
         else if(isset($args['sensors'])) {
-            return devices::find($args['sensors']);
+            return measurements::find($args['sensors']);
         } 
 
         else { 
-            return devices::all();
+            return measurements::all();
         }    }
 }

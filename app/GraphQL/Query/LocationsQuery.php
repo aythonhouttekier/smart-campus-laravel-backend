@@ -17,7 +17,7 @@ class LocationsQuery extends Query
 
     public function type()
     {
-        return GraphQL::type('devices');
+        return GraphQL::type('locations');
     }
 
     public function args()
@@ -52,25 +52,25 @@ class LocationsQuery extends Query
     {
         
         if(isset($args['id'])) {
-            return devices::find($args['id']);
+            return locations::find($args['id']);
         }
 
         else if(isset($args['name'])) {
-            return devices::find($args['name']);
+            return locations::find($args['name']);
         } 
         
         else if(isset($args['roomnumber'])) {
-            return devices::find($args['roomnumber']);
+            return locations::find($args['roomnumber']);
         } 
         else if(isset($args['description'])) {
-            return devices::find($args['description']);
+            return locations::find($args['description']);
         } 
         else if(isset($args['devices'])) {
-            return devices::find($args['devices']);
+            return locations::find($args['devices']);
         } 
 
         else { 
-            return devices::all();
+            return locations::all();
         }
 
         

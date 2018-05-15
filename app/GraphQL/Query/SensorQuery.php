@@ -47,22 +47,22 @@ class SensorQuery extends Query
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
         if(isset($args['id'])) {
-            return devices::find($args['id']);
+            return sensors::find($args['id']);
         }
 
         else if(isset($args['name'])) {
-            return devices::find($args['name']);
+            return sensors::find($args['name']);
         } 
         
         else if(isset($args['measurements'])) {
-            return devices::find($args['measurements']);
+            return sensors::find($args['measurements']);
         } 
        
         else if(isset($args['devices'])) {
-            return devices::find($args['devices']);
+            return sensors::find($args['devices']);
         } 
 
         else { 
-            return devices::all();
+            return sensors::all();
         }    }
 }
