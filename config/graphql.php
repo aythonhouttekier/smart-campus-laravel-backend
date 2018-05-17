@@ -2,6 +2,8 @@
 
 use App\GraphQL\Query\UserQuery;
 use App\GraphQL\Type\UserType;
+use App\GraphQL\Query\SensorQuery;
+use App\GraphQL\Type\SensorType;
 
 return [
 
@@ -126,13 +128,12 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'users' => UserQuery::class
-
+                'usersQuery' => UserQuery::class,
+                'sensorsQuery' => SensorQuery::class
 
 
             ],
             'mutation' => [
-
             ]
         ]
     ],
@@ -140,7 +141,8 @@ return [
 
 
     'types' => [
-        'User'  => UserType::class
+        'User'  => UserType::class,
+        'sensors' => SensorType::class
 
 
     ],
