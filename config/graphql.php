@@ -6,6 +6,8 @@ use App\GraphQL\Query\SensorQuery;
 use App\GraphQL\Type\SensorType;
 use App\GraphQL\Type\MeasurementsType;
 use App\GraphQL\Query\MeasurementsQuery;
+use App\GraphQL\Type\LocationsType;
+use App\GraphQL\Query\LocationsQuery;
 
 return [
 
@@ -132,7 +134,8 @@ return [
             'query' => [
                 'usersQuery' => UserQuery::class,
                 'sensorsQuery' => SensorQuery::class,
-                'measurementsQuery' => MeasurementsQuery::class
+                'measurementsQuery' => MeasurementsQuery::class,
+                'locationsQuery' => LocationsQuery::class,
 
             ],
             'mutation' => [
@@ -146,6 +149,7 @@ return [
         'User'  => UserType::class,
         'sensors' => SensorType::class,
         'measurements' => MeasurementsType::class,
+        'locations' => LocationsType::class,
 
 
     ],
