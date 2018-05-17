@@ -4,6 +4,8 @@ use App\GraphQL\Query\UserQuery;
 use App\GraphQL\Type\UserType;
 use App\GraphQL\Query\SensorQuery;
 use App\GraphQL\Type\SensorType;
+use App\GraphQL\Type\MeasurementsType;
+use App\GraphQL\Query\MeasurementsQuery;
 
 return [
 
@@ -129,8 +131,8 @@ return [
         'default' => [
             'query' => [
                 'usersQuery' => UserQuery::class,
-                'sensorsQuery' => SensorQuery::class
-
+                'sensorsQuery' => SensorQuery::class,
+                'measurementsQuery' => MeasurementsQuery::class
 
             ],
             'mutation' => [
@@ -142,7 +144,8 @@ return [
 
     'types' => [
         'User'  => UserType::class,
-        'sensors' => SensorType::class
+        'sensors' => SensorType::class,
+        'measurements' => MeasurementsType::class,
 
 
     ],
