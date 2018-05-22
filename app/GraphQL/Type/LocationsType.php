@@ -11,7 +11,9 @@ class LocationsType extends BaseType
 {
     protected $attributes = [
         'name' => 'LocationsType',
-        'description' => 'A location type'
+        'description' => 'A location type',
+        'model' => locations::class
+
     ];
 
     public function fields()
@@ -33,6 +35,16 @@ class LocationsType extends BaseType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'The description'
             ],
+            'devices' => [
+                'args' => [
+                    'id' => [
+                        'type'        => Type::int(),
+                        'description' => 'id of device',
+                    ],
+                ],
+                'type'        => Type::listOf(GraphQL::type('devices')),
+                'description' => 'The device from the locations',
+            ],
             // 'created_at' => [
             //     'type' => Type::timestamp(),
             //     'description' => 'created at',
@@ -41,10 +53,10 @@ class LocationsType extends BaseType
             //     'type' => Type::timestamp(),
             //     'description' => 'updated at'
             // ],
-            'devices' => [
-                'type' => Type::listof(GraphQL::type('devices')),
-                'description' => 'The devices from the location'
-            ]
+            // 'devices' => [
+            //     'type' => Type::listof(GraphQL::type('devices')),
+            //     'description' => 'The devices from the location'
+            // ]
         ];
     }
 }

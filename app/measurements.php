@@ -9,6 +9,6 @@ class measurements extends Model
     protected $fillable = ['value', 'sensor_id'];
     
     public function sensors() {
-        return $this->hasOne('sensors');
+        return $this->hasOne(sensors::class, 'devices_id');
     }
 }

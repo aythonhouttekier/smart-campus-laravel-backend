@@ -39,10 +39,10 @@ class LocationsQuery extends Query
                 'type' => Type::string(),
                 'description' => 'The description'
             ],
-           'devices' => [
-                'type' => Type::listof(GraphQL::type('devices')),
-                'description' => 'The devices from the location'
-            ]
+        //    'devices' => [
+        //         'type' => Type::listof(GraphQL::type('devices')),
+        //         'description' => 'The devices from the location'
+        //     ]
         ];
     }
 
@@ -50,6 +50,8 @@ class LocationsQuery extends Query
     {
         if(isset($args['id'])) {
             return locations::find($args['id']);
+            return  $root->devices->where('id', $args['id']);
+
         }
 
         else if(isset($args['name'])) {
@@ -62,11 +64,11 @@ class LocationsQuery extends Query
         else if(isset($args['description'])) {
             return locations::find($args['description']);
         } 
-        else if(isset($args['devices'])) {
-            return locations::find($args['devices']);
-        } 
+        
         else { 
             return locations::all();
+            return $root->devices;
+
         }    
     }
 }

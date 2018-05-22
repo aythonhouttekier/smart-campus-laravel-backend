@@ -9,7 +9,7 @@ class locations extends Model
     protected $fillable = array('name', 'description', 'roomnumber');
     
     public function devices() {
-        return $this->hasMany('devices');
+        return $this->hasMany(devices::class);
     }
 
 }

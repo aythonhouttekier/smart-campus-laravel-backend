@@ -11,7 +11,8 @@ class MeasurementsType extends BaseType
 {
     protected $attributes = [
         'name' => 'MeasurementsType',
-        'description' => 'A Measurementstype'
+        'description' => 'A Measurementstype',
+        'model' => measurements::class
     ];
 
     public function fields()
@@ -19,7 +20,7 @@ class MeasurementsType extends BaseType
         return [
             'id' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'The id of measerument'
+                'description' => 'The id of measurement'
             ],
             'value' => [
                 'type' => Type::nonNull(Type::int()),
@@ -28,6 +29,17 @@ class MeasurementsType extends BaseType
             'sensor_id' => [
                 'type' => Type::nonNull(Type::int()),
                 'description' => 'The sensor_id'
+            ],
+
+            'sensors' => [
+                'args' => [
+                    'id' => [
+                        'type'        => Type::int(),
+                        'description' => 'id of sensor',
+                    ],
+                ],
+                'type'        => GraphQL::type('sensors'),
+                'description' => 'The measurements from sensors',
             ],
             // 'created_at' => [
             //     'type' => Type::timestamp(),

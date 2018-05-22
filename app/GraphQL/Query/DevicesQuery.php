@@ -37,10 +37,10 @@ class DevicesQuery extends Query
                 'type' => Type::string(),
                 'description' => 'The dev-uit code'
             ],
-            // 'location_id' => [
-            //     'type' => Type::int(),
-            //     'description' => 'The location id'
-            // ],
+            'locations_id' => [
+                'type' => Type::int(),
+                'description' => 'The location id'
+            ],
             // 'created_at' => [
             //     'type' => Type::timestamp(),
             //     'description' => 'created at',
@@ -74,9 +74,8 @@ class DevicesQuery extends Query
         if (isset($args['id'])) {
                 return devices::find($args['id']);
                 return  $root->sensors->where('id', $args['id']);
-            }
-        
-            
+                return  $root->locations->where('id', $args['id']);
+            }         
                 
         else if(isset($args['name'])) {
             return devices::find($args['name']);
@@ -85,19 +84,14 @@ class DevicesQuery extends Query
         else if(isset($args['dev-eui'])) {
             return devices::find($args['dev-eui']);
         } 
-        else if(isset($args['location_id'])) {
-            return devices::find($args['location_id']);
+        else if(isset($args['locations_id'])) {
+            return devices::find($args['locations_id']);
         } 
-        // else if(isset($args['sensors'])) {
-        //     return sensors::find($args['sensors']);
-        // } 
-        // else if(isset($args['locations'])) {
-        //     return locations::find($args['locations']);
-        // } 
-       
+               
         else { 
             return devices::all();
             return $root->sensors;
+            return $root->locations;
         }
 
         

@@ -33,6 +33,14 @@ class SensorQuery extends Query
                 'type' => Type::string(),
                 'description' => 'The name of sensor'
             ],
+            'measurement_unit' => [
+                'type' => Type::string(),
+                'description' => 'The unit of measurement'
+            ],
+            'devices_id' => [
+                'type' => Type::string(),
+                'description' => 'The id of sensor'
+            ],
             // 'created_at' => [
             //     'type' => Type::timestamp(),
             //     'description' => 'created at',
@@ -41,14 +49,6 @@ class SensorQuery extends Query
             //     'type' => Type::timestamp(),
             //     'description' => 'updated at'
             // ],
-            // 'measurements' => [
-            //     'type' => Type::listof(GraphQL::type('measurements')),
-            //     'description' => 'The the measurements_unit of sensor'
-            // ],
-            // 'devices' => [
-            //     'type' => GraphQL::type('devices'),
-            //     'description' => 'The device_id from a sensor'
-            // ]
         ];
     }
 
@@ -56,19 +56,21 @@ class SensorQuery extends Query
     {
         if(isset($args['id'])) {
             return sensors::find($args['id']);
+            return  $root->measurements->where('id', $args['id']);
+            return  $root->devices->where('id', $args['id']);
         }
 
         else if(isset($args['name'])) {
             return sensors::find($args['name']);
         } 
         
-        // else if(isset($args['measurements'])) {
-        //     return measurements::find($args['measurements']);
-        // } 
+        else if(isset($args['measurement_unit'])) {
+            return sensors::find($args['measurement_unit']);
+        } 
        
-        // else if(isset($args['devices'])) {
-        //     return devices::find($args['devices']);
-        // } 
+        else if(isset($args['devices_id'])) {
+            return sensors::find($args['devices_id']);
+        } 
 
         else { 
             return sensors::all();
