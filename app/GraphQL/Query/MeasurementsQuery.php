@@ -31,10 +31,10 @@ class MeasurementsQuery extends Query
                 'type' => Type::int(),
                 'description' => 'The value of measurement'
             ],
-            'sensor_id' => [
-                'type' => Type::int(),
-                'description' => 'The sensor_id'
-            ],
+            // 'sensor_id' => [
+            //     'type' => Type::int(),
+            //     'description' => 'The sensor_id'
+            // ],
             // 'created_at' => [
             //     'type' => Type::timestamp(),
             //     'description' => 'created at',
@@ -43,10 +43,10 @@ class MeasurementsQuery extends Query
             //     'type' => Type::timestamp(),
             //     'description' => 'updated at'
             // ],
-            // 'sensors' => [
-            //     'type' => GraphQL::type('sensors'),
-            //     'description' => 'The sensorid of measurement'
-            // ]
+            'sensors' => [
+                'type' => GraphQL::type('sensors'),
+                'description' => 'The sensorid of measurement'
+            ]
         ];
     }
 
@@ -60,8 +60,8 @@ class MeasurementsQuery extends Query
             return measurements::find($args['value']);
         } 
         
-        else if(isset($args['sensor_id'])) {
-            return measurements::find($args['sensor_id']);
+        else if(isset($args['sensors'])) {
+            return measurements::find($args['sensors']);
         } 
 
         else { 

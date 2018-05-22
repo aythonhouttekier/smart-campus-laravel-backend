@@ -18,16 +18,16 @@ class UserType extends BaseType
     {
         return [
             'id' => [
-                'type' => Type::nonNull(Type::int())
+                'type' => Type::int()
             ],
             'name' => [
-                'type' => Type::nonNull(Type::string())
+                'type' => Type::string()
             ],
             'email' => [
-                'type' => Type::nonNull(Type::string())
+                'type' => Type::string()
             ],
             'password' => [
-                'type' => Type::nonNull(Type::string())
+                'type' => Type::string()
             ],
             'remember_token' => [
                 'type' => Type::string()

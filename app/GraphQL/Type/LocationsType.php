@@ -41,10 +41,10 @@ class LocationsType extends BaseType
             //     'type' => Type::timestamp(),
             //     'description' => 'updated at'
             // ],
-            // 'devices' => [
-            //     'type' => Type::listof(GraphQL::type('devices')),
-            //     'description' => 'The devices from the location'
-            // ]
+            'devices' => [
+                'type' => Type::listof(GraphQL::type('devices')),
+                'description' => 'The devices from the location'
+            ]
         ];
     }
 }

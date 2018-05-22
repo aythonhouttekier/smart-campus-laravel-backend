@@ -63,11 +63,11 @@ class SensorQuery extends Query
         } 
         
         // else if(isset($args['measurements'])) {
-        //     return sensors::find($args['measurements']);
+        //     return measurements::find($args['measurements']);
         // } 
        
         // else if(isset($args['devices'])) {
-        //     return sensors::find($args['devices']);
+        //     return devices::find($args['devices']);
         // } 
 
         else { 
