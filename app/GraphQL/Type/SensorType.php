@@ -58,22 +58,6 @@ class SensorType extends BaseType
                 'description' => 'The device from the sensors',
             ],
 
-            // 'created_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'created at',
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'updated at'
-            // ],
-            // 'measurements' => [
-            //     'type' => Type::listof(GraphQL::type('measurements')),
-            //     'description' => 'The the measurementsunit of sensor'
-            // ],
-            // 'devices' => [
-            //     'type' => GraphQL::type('devices'),
-            //     'description' => 'The device_id from a sensor'
-            // ]
         ];
     }
 }

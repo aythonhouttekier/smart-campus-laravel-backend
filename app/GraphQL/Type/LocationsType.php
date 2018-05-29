@@ -45,18 +45,7 @@ class LocationsType extends BaseType
                 'type'        => Type::listOf(GraphQL::type('devices')),
                 'description' => 'The device from the locations',
             ],
-            // 'created_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'created at',
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'updated at'
-            // ],
-            // 'devices' => [
-            //     'type' => Type::listof(GraphQL::type('devices')),
-            //     'description' => 'The devices from the location'
-            // ]
+            
         ];
     }
 }

@@ -59,25 +59,6 @@ class DevicesType extends BaseType
                 'description' => 'The sensors from the device',
             ],
            
-            // 'created_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'created at',
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'updated at'
-            // ],
-            // 'sensors' => [
-            //     'type' => Type::listof(GraphQL::type('sensors')),
-            //     'description' => 'The sensors from the device',
-            //     'resolve' => function($data, $args) {
-            //         return $data->sensors()->get();
-            //     }
-            // ],
-            // 'locations' => [
-            //     'type' => GraphQL::type('locations'),
-            //     'description' => 'The location of the device'
-            // ]
         ];
         
     }       

@@ -7,8 +7,7 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
 use App\devices;
-use App\sensors;
-use App\locations;
+
 
 class DevicesQuery extends Query
 {
@@ -41,36 +40,12 @@ class DevicesQuery extends Query
                 'type' => Type::int(),
                 'description' => 'The location id'
             ],
-            // 'created_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'created at',
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'updated at'
-            // ],
-            // 'sensors' => [
-            //     'type' => Type::listof(GraphQL::type('sensors')),
-            //     'description' => 'The sensors from the device'
-            // ],
-            // 'locations' => [
-            //     'type' => GraphQL::type('locations'),
-            //     'description' => 'The location of the device'
-            // ]
+           
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
-        // $fields = $info->getFieldSelection($depth = 5);
-
-        // $devices = devices::query();
-
-        // foreach ($fields as $field => $keys) {
-        //     if ($field === 'sensors') {
-        //         $devices->with('sensors');
-        //     }
-        // }   
         if (isset($args['id'])) {
                 return devices::find($args['id']);
                 return  $root->sensors->where('id', $args['id']);

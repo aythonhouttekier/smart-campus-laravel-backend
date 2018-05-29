@@ -32,12 +32,7 @@ class UserType extends BaseType
             'remember_token' => [
                 'type' => Type::string()
             ],
-            // 'created_at' => [
-            //     'type' => Type::Timestamp()
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::Timestamp()
-            // ]
+           
         ];
     }
 }

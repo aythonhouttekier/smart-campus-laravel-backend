@@ -39,12 +39,7 @@ class UserQuery extends Query
             'remember_token' => [
                 'type' => Type::string()
             ],
-            // 'created_at' => [
-            //     'type' => Type::Timestamp()
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::Timestamp()
-            // ]
+            
         ];
     }
 
@@ -69,15 +64,7 @@ class UserQuery extends Query
         else if(isset($args['remember_token'])) {
             return User::find($args['remember_token']);
         }
-        
-        // else if(isset($args['created_at'])) {
-        //     return user::find($args['created_at']);
-        // }
-
-        // else if(isset($args['updated_at'])) {
-        //     return user::find($args['updated_at']);
-        // } 
-
+       
         else { 
             return User::all();
         }

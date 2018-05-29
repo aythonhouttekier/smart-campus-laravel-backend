@@ -19,7 +19,6 @@ class SensorQuery extends Query
     {
         return GraphQL::type('sensors');
 
-        //return Type::listOf(Type::string());
     }
 
     public function args()
@@ -41,14 +40,7 @@ class SensorQuery extends Query
                 'type' => Type::string(),
                 'description' => 'The id of sensor'
             ],
-            // 'created_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'created at',
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'updated at'
-            // ],
+           
         ];
     }
 

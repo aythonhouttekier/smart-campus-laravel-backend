@@ -39,10 +39,7 @@ class LocationsQuery extends Query
                 'type' => Type::string(),
                 'description' => 'The description'
             ],
-        //    'devices' => [
-        //         'type' => Type::listof(GraphQL::type('devices')),
-        //         'description' => 'The devices from the location'
-        //     ]
+        
         ];
     }
 

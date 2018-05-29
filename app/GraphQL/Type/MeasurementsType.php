@@ -41,18 +41,7 @@ class MeasurementsType extends BaseType
                 'type'        => GraphQL::type('sensors'),
                 'description' => 'The measurements from sensors',
             ],
-            // 'created_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'created at'
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'updated at'
-            // ],
-            // 'sensors' => [
-            //     'type' => GraphQL::nonNull(Type::type('sensors')),
-            //     'description' => 'The sensorid of measerurment'
-            // ]
+            
         ];
     }
 }

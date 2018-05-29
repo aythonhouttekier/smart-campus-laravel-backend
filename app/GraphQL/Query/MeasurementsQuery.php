@@ -35,18 +35,7 @@ class MeasurementsQuery extends Query
                 'type' => Type::int(),
                 'description' => 'The sensor_id'
             ],
-            // 'created_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'created at',
-            // ],
-            // 'updated_at' => [
-            //     'type' => Type::timestamp(),
-            //     'description' => 'updated at'
-            // ],
-            // 'sensors' => [
-            //     'type' => GraphQL::type('sensors'),
-            //     'description' => 'The sensorid of measurement'
-            // ]
+            
         ];
     }
 
